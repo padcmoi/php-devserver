@@ -1,4 +1,4 @@
-# Node Development Server
+# PHP Development Server
 
 ## Short Description
 This is an environment for developing any PHP application.
@@ -9,7 +9,7 @@ This container allows you to have a version of PHP without installing PHP locall
 
 
 ## Installation
-1. Copy the `docker/.env.example` file to `.env` and modify it as needed, such as setting the desired Node.js version.
+1. Copy the `docker/.env.example` file to `.env` and modify it as needed, such as setting the desired PHP version.
 2. In the `app` folder, the content is an example. Place your project inside.
 3. Use the following Docker commands:
     - `docker/create_env.sh`: To configure your environment and remove unnecessary files including folder .git
