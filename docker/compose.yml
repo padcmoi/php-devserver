@@ -1,0 +1,13 @@
+services:
+  www:
+    container_name: php-devserver
+    build:
+      context: .
+      args:
+        PHP_VERSION: ${PHP_VERSION-8.2}
+    env_file: .env
+    ports:
+      - "${HOST_PORT-80}:${CONTAINER_PORT-80}"
+    volumes:
+      - ../www:/var/www/html/
+

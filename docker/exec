@@ -1,0 +1,11 @@
+#!/bin/sh
+
+[ "$(dirname "$0")" != "docker" ] && echo "please use the command with the docker/<CMD> folder" && exit 1
+
+sudo chown -R $(whoami):$(whoami) ./www
+
+commands=sh
+
+[ $# -gt 0 ] && commands="$@"
+
+sudo docker exec -it php-devserver sh -c "${commands}"

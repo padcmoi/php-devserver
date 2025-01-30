@@ -1,0 +1,10 @@
+#!/bin/sh
+
+[ "$(dirname "$0")" != "docker" ] && echo "please use the command with the docker/<CMD> folder" && exit 1
+
+sudo chown -R $(whoami):$(whoami) ./www
+
+[ -n "$1" ] && docker/version "$1"
+
+sudo docker compose -f docker/compose.yml build --no-cache
+sudo docker compose -f docker/compose.yml up -d

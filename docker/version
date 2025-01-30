@@ -1,0 +1,9 @@
+#!/bin/sh
+
+[ "$(dirname "$0")" != "docker" ] && echo "please use the command with the docker/<CMD> folder" && exit 1
+
+sudo chown -R $(whoami):$(whoami) ./www
+
+VERSION=${1:-8.2}
+
+sed -i "s/^PHP_VERSION=.*/PHP_VERSION=$VERSION/" docker/.env
