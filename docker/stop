@@ -4,5 +4,5 @@
 
 sudo chown -R $(whoami):$(whoami) ./www
 
-sudo docker compose -f docker/compose.yml stop
-sudo docker compose -f docker/compose.yml rm -f
+sudo docker compose -p php_dev_server -f docker/compose.yml stop
+sudo docker compose -p php_dev_server -f docker/compose.yml rm -f
